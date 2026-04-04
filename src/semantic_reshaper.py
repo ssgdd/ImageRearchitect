@@ -4,7 +4,7 @@ import numpy as np
 from PIL import Image
 from diffusers import StableDiffusionControlNetInpaintPipeline, ControlNetModel
 from diffusers.utils import load_image
-# 你需要从 community 库下载对应的 aux 预处理器
+
 from controlnet_aux import OpenposeDetector, CannyDetector
 
 
@@ -36,16 +36,34 @@ class SemanticReshaper:
         self.processor_openpose = OpenposeDetector.from_pretrained("lllyasviel/Annotators")
         self.processor_canny = CannyDetector()
 
+    def _force_multiple_of_8(self, pil_image):
+        """将 PIL 图像的尺寸强制调整为 8 的倍数"""
+        w, h = pil_image.size
+        new_w = (w // 8) * 8
+        new_h = (h // 8) * 8
+        if new_w == w and new_h == h:
+            return pil_image
+        return pil_image.resize((new_w, new_h), Image.Resampling.LANCZOS)
+
     def generate_reshaped_image(self, original_img_path: str, clean_bg_path: str,
                                 target_position: tuple = (0.2, 0.5),  # 目标构图坐标 (x_ratio, y_ratio)
                                 prompt: str = "", negative_prompt: str = ""):
         """
         核心方法：执行语义重塑和生成。
         """
-        # --- 步骤 1: 预处理和特征提取 ---
+        # --- 步骤 0: 严格的尺寸对齐 ---
         original_img = Image.open(original_img_path).convert("RGB")
         clean_bg = Image.open(clean_bg_path).convert("RGB")
-        W, H = original_img.size
+
+        # 1. 强制让背景图尺寸成为 8 的倍数
+        clean_bg = self._force_multiple_of_8(clean_bg)
+        target_size = clean_bg.size  # (W, H)
+
+        # 2. 强制原图与背景图尺寸完全一致 (非常关键！)
+        if original_img.size != target_size:
+            original_img = original_img.resize(target_size, Image.Resampling.LANCZOS)
+
+        W, H = target_size
 
         print("[1/4] 提取结构引导信号 (Pose/Edges)...")
         # 1.1 提取原图的骨架
