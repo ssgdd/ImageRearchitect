@@ -91,7 +91,7 @@ if __name__ == "__main__":
     input_mask_path = "../data/output/test_mask.png"
 
     img = cv2.imread(input_img_path)
-    mask = cv2.imread(input_mask_path, cv2.IMREAD_GRAYSCALE) # 注意以灰度图读取Mask
+    mask = cv2.imread(input_mask_path, cv2.IMREAD_GRAYSCALE)
 
     inpainter = BackgroundInpainter()
     clean_bg = inpainter.inpaint_background(img, mask)

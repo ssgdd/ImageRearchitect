@@ -12,10 +12,7 @@ class SemanticReshaper:
     def __init__(self, sd_model_id: str = "runwayml/stable-diffusion-v1-5",
                  openpose_id: str = "lllyasviel/control_v11p_sd15_openpose",
                  canny_id: str = "lllyasviel/control_v11p_sd15_canny"):
-        """
-        初始化层次二的高级生成流水线。
-        这会消耗大量显存。
-        """
+
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
         self.torch_dtype = torch.float16 if self.device == "cuda" else torch.float32
 

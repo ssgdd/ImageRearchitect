@@ -15,7 +15,7 @@ def main():
     # 确保输出目录存在
     os.makedirs(os.path.dirname(output_image_path), exist_ok=True)
 
-    # 你想提取的关联主体类别 (YOLO COCO 数据集类别)
+    # 目标提取的关联主体类别 (YOLO COCO 数据集类别)
     target_categories = ['person', 'flower', 'handbag', 'cup']
 
     # 构图策略: 'left_third' (移到左边), 'right_third' (移到右边), 'center' (居中)

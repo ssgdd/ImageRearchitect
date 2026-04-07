@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="403aa777-67fa-4603-9278-a05dd770b383" name="更改" comment="" />
+    <list default="true" id="403aa777-67fa-4603-9278-a05dd770b383" name="更改" comment="new function">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/background_inpainting.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/background_inpainting.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/semantic_reshaper.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/semantic_reshaper.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +23,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -29,7 +39,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/ssgdd/ImageRearchitect.git&quot;,
-    &quot;accountId&quot;: &quot;f63c2baa-7a98-4fe2-a539-ad1e8abfdcac&quot;
+    &quot;accountId&quot;: &quot;91bbf933-2e15-417a-bc14-93634f8ab95b&quot;
   }
 }</component>
   <component name="ProblemsViewState">
@@ -49,10 +59,12 @@
     "Python.background_inpainting.executor": "Run",
     "Python.composition.executor": "Run",
     "Python.main.executor": "Run",
+    "Python.semantic_reshaper.executor": "Run",
     "Python.subject_extraction.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "c086ae1e",
     "ignore.virus.scanning.warn.message": "true",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
@@ -72,6 +84,23 @@
       <option name="presentableId" value="Default" />
       <updated>1773820955756</updated>
     </task>
+    <task id="LOCAL-00001" summary="1">
+      <option name="closed" value="true" />
+      <created>1773897752671</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1773897752671</updated>
+    </task>
+    <task id="LOCAL-00002" summary="new function">
+      <option name="closed" value="true" />
+      <created>1775288403434</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1775288403434</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -89,5 +118,8 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
+    <MESSAGE value="1" />
+    <MESSAGE value="new function" />
+    <option name="LAST_COMMIT_MESSAGE" value="new function" />
   </component>
 </project>
